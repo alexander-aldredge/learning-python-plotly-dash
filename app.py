@@ -44,6 +44,7 @@ fig = px.line(df, x="x", y="y", title="Sorted Input")
 
 
 # This is the code for a jumbotron.
+# Inside the jumbotron is a line with < dcc.Graph(____) > in it. That's the histogram.
 jumbotron = html.Div(
     dbc.Container(
         [
