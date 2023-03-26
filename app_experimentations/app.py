@@ -3,6 +3,10 @@ from dash import dcc
 from dash import html
 import plotly.express as px
 
+import sys
+sys.path.insert(0, './page1/components/body/graphs')
+sys.path.insert(0, './page2/components/body/graphs')
+
 import graph1
 import graph2
 
