@@ -1,7 +1,17 @@
+#!/usr/bin/python
+
+import dash_bootstrap_components as dbc
+
+
 # This is the code for a navbar.
 navbar = dbc.NavbarSimple(
     children=[
-        dbc.NavItem(dbc.NavLink("USA Patient Data", href="#")),
+        dbc.NavItem(
+            dbc.NavLink(
+                "USA Patient Data",
+                href="#",
+            ),
+        ),
         dbc.DropdownMenu(
             children=[
                 dbc.DropdownMenuItem("More pages", header=True),
@@ -19,5 +29,5 @@ navbar = dbc.NavbarSimple(
     brand="Alex's American EMR & Hospital Dashboard",
     brand_href="#",
     color="primary",
-    dark=True
+    dark=True,
 )
