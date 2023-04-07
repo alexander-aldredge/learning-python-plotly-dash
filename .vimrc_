@@ -1,0 +1,95 @@
+set nu
+set relativenumber
+set scrolloff=16
+set nowrap
+set signcolumn=yes
+set cursorline
+highlight clear signcolumn
+
+" The 'set list' && 'set lcs' settings are to visualize tabs. This setting
+" ...does not work on .py files. This setting is best for writing in any other
+" coding file type.
+" set list
+"" set lcs=tab:\|\  " the last character is space!
+
+set nospell
+set incsearch
+set hlsearch
+set ignorecase
+hi Search ctermbg=LightYellow
+hi Search ctermfg=Red
+
+set noerrorbells
+
+set hidden
+set undodir=~/.vim/undodir
+set undofile
+
+autocmd FileType python map <buffer> <F12> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+autocmd FileType python imap <buffer> <F12> <esc>:w<CR>:exec '!python3' shellescape(@%, 1)<CR>
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Begins the < Plug > Plugin manager set.
+call plug#begin('~/.vim/plugged')
+
+	" Creates a tree called < Nerdtree > that can called on to view and open files starting in the present directory.
+	Plug 'preservim/nerdtree'
+
+	" Creates a tree called < Undotree > that can be called on to review edits to the file.
+	Plug 'mbbill/undotree'
+
+	" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+	Plug 'junegunn/vim-easy-align'
+
+	" Installs < airline > which provides a status-bar on the bottom of the VIM terminal.
+	Plug 'vim-airline/vim-airline'
+	" Installs < airline >'s statusbar themes.
+	Plug 'vim-airline/vim-airline-themes'
+
+	" Installs < vim dad-bod > and < vim-dadbod-ui > which provides SQL support for VIM.
+	Plug 'https://github.com/tpope/vim-dadbod'
+	Plug 'kristijanhusak/vim-dadbod-ui'
+
+	" Installs < vim-solidity > which provides syntax coloring for < .sol > files.
+	Plug 'tomlion/vim-solidity'
+
+	" Installs < ranger.vim > which provides ranger support within vim.
+	Plug 'francoiscabrol/ranger.vim'
+
+	" Installs < vim-easycomplete > which provides vim with an autocomplete function.
+	Plug 'jayli/vim-easycomplete'
+
+	" Installs < vim-commentary > which provides vim with an comment shortcuts function.
+	Plug 'https://github.com/tpope/vim-commentary'
+
+	" Installs < vim-commentary > which provides vim with an comment shortcuts function.
+	Plug 'https://github.com/tpope/vim-fugitive'
+
+	" Installs < vim-ghost > which allows one to mirror a VIM instance in the browser.
+	"""" Plug 'raghur/vim-ghost', {'do': ':GhostInstall'}
+
+	" Installs < ALE > which enables a error line on the left side.
+	Plug 'https://github.com/dense-analysis/ale.git'
+
+" Ends the < Plug > Plugin manager set.
+call plug#end()
+
+" Uses the < airline > plugin and sets the theme of the status-bar.
+let g:airline_theme='angr'
+
+" Porvides the default icons for < vim-dadbod-ui >.
+let g:db_ui_icons = {
+    \ 'expanded': '▾',
+    \ 'collapsed': '▸',
+    \ 'saved_query': '*',
+    \ 'new_query': '+',
+    \ 'tables': '~',
+    \ 'buffers': '»',
+    \ 'connection_ok': '✓',
+    \ 'connection_error': '✕',
+    \ }
+
+" Sets the < vim-dadbod-ui> window size.
+let g:db_ui_winwidth = 30
