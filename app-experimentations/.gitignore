@@ -1,0 +1,4 @@
+# This is my first gitIgnore file.
+
+# This file is to be omitted because I don't need to share with anyone my plans.
+plans.txt

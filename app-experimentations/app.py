@@ -96,7 +96,8 @@ app.layout = dbc.Container([
 
 ],
 
-fluid=True,
+fluid = True,
+style={"padding": "0"},
 )
 
 
