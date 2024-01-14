@@ -4,8 +4,10 @@ import dash
 import plotly.graph_objects as go
 import numpy as np
 
-x0 = np.random.randn(500)
-x1 = np.random.randn(500) + 1
+
+# Setting histogram 
+x0 = np.random.randn(5000)
+x1 = np.random.randn(5000) + 1
 
 fig1 = go.Figure()
 fig1.add_trace(go.Histogram(x=x0))
